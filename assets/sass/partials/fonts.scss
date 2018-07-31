@@ -1,0 +1,26 @@
+$source: '../fonts/HelveticaNeue/';
+
+@each $font-family in HelveticaNeue,
+                      HelveticaNeue-Thin,
+                      HelveticaNeue-Light,
+                      HelveticaNeue-UltraLight {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('#{$source}#{$font-family}.eot');
+    src: url('#{$source}#{$font-family}.eot?#iefix') format('embedded-opentype'),
+         url('#{$source}#{$font-family}.woff2') format('woff2'),
+         url('#{$source}#{$font-family}.woff') format('woff'),
+         url('#{$source}#{$font-family}.ttf') format('truetype'),
+         url('#{$source}#{$font-family}.svg##{$font-family}') format('svg');
+    @if $font-family == HelveticaNeue {
+      font-weight: normal;
+    } @else if  $font-family == HelveticaNeue-Thin {
+      font-weight: 100;
+    } @else if $font-family == HelveticaNeue-Light {
+      font-weight: 300;
+    } @else if $font-family == HelveticaNeue-UltraLight {
+      font-weight: 100;
+    }
+    font-style: normal;
+  }
+}

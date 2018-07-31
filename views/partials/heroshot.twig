@@ -1,0 +1,76 @@
+<section class="landing__heroshot">
+  <div class="landing__heroshot__background-wrapper">
+    <div class="landing__heroshot__background-image"></div>
+  </div>
+
+  {% if bodyclassname == 'landing-page' %}
+    <div class="landing__heroshot__wrapper">
+      <div class="landing__heroshot__subsection">
+        <h1 class="landing__heroshot__title">
+          Retargeting Made Easy
+        </h1>
+
+        <p class="landing__heroshot__description">
+            Are you looking for a solution to cart abandonment problem?
+            Look no further! Show the right ads to the right customers
+            and make more sales with the power of Facebook Dynamic Ads!
+        </p>
+
+        <a class="landing__heroshot__button
+                  js-landing__heroshot__button_run-campaign"
+           href="http://apps.shopify.com/retargetapp-facebook-retargeting?utm_source=Landing%20page&utm_medium=Heroshot%20-%20Run%20My%20First%20Campaign&utm_campaign=RetargetApp%20landing%20page"
+           title="Run My First Campaign with RetargetApp">
+          Run My First Campaign
+        </a>
+      </div>
+
+      <div class="landing__heroshot__subsection">
+        <!-- Button trigger modal -->
+        <button type="button"
+                class="landing__heroshot__button_play
+                       js-landing__heroshot__button_watch-video"
+                data-toggle="modal"
+                data-target="#watchVideoModal"
+                data-theVideo="https://www.youtube.com/embed/5OHgQlmiDg0">
+          <i class="play-icon" id="play-icon">
+            <svg viewBox="0 0 300 300">
+              <use xlink:href="#play-icon"></use>
+            </svg>
+          </i>
+          <span class="landing__heroshot__link">
+            Watch Video
+          </span>
+        </button>
+      </div>
+
+      <div class="landing__heroshot__subsection_scroll-for-more">
+        <a href="#landing__scroll-for-more-section">
+          <span class="js-scroll-for-more-desktop">
+            Scroll to Find More
+          </span>
+          <span class="js-scroll-for-more-mobile">
+            Swipe to Find More
+          </span>
+        </a>
+      </div>
+    </div>
+  {% elseif bodyclassname == 'error-page' %}
+    <div class="landing__heroshot__wrapper">
+      <div class="error-page__wrapper">
+        <h1 class="error-page__title">
+          Page does not exist
+        </h1>
+        <p class="error-page__subtitle">
+          Error 404
+        </p>
+      </div>
+    </div>
+
+    <div class="error-page__progress-bar__wrapper">
+      <div class="error-page__progress-bar__runner"></div>
+    </div>
+  {% endif %}
+    <section class="partner-badge_header-wrapper">
+        {{ include('partials/fb-partner.twig', {placement:'heroshot-bottom'}) }}
+    </section>
+</section>

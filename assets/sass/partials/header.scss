@@ -1,0 +1,142 @@
+.landing__header {
+  position: fixed;
+  width: 100vw;
+  height: $header-height;
+  background: transparent;
+  z-index: 400;
+
+  @media (min-width: 1280px) {
+    max-width: 100vw;
+  }
+
+  @media (max-width: 767px) {
+    height: round($header-height * 0.75);
+  }
+
+  &__background-wrapper {
+    position: absolute;
+    height: $header-height;
+    overflow: hidden;
+
+    @media (max-width: 767px) {
+      height: round($header-height * 0.75);
+    }
+  }
+
+  &__background-image {
+    @include background-image-layout;
+  }
+
+  &__navbar {
+    margin: 0 auto;
+    padding: 0 $base-padding_large;
+    display: block;
+    max-width: $layout-max-width;
+    height: $header-height;
+    border: none;
+    background-color: transparent;
+
+    @media (min-width: 1280px) {
+      @include scale(1.25);
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 $base-padding;
+      height: round($header-height * 0.75);
+    }
+
+    &__list {
+      @include flexbox;
+      @include flex-flow;
+      @include justify-content(space-between);
+      @include align-items(center);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      list-style: none;
+
+      &__item {
+        margin: -($header-height * 2) 0 -4px 35px;
+        opacity: 0;
+        @include transition(opacity 700ms ease-in-out);
+
+        &.landing__header__navbar__list__item_show {
+          margin-top: 0;
+          opacity: 1;
+          @include transition(opacity 700ms ease-in-out);
+        }
+
+        @media (max-width: 810px) and (min-width: 768px) {
+          margin-left: 25px;
+        }
+
+        @media (max-width: 767px) {
+          display: none;
+        }
+
+        &:first-of-type {
+          @include flex-grow(2);
+          margin: 0;
+          opacity: 1;
+
+          @media (max-width: 767px) {
+            display: block;
+          }
+        }
+
+        &:last-of-type {
+          margin-top: 0;
+          opacity: 1;
+        }
+
+        #retargetapp-logo {
+          display: block;
+          width: $brand-logo-width;
+          height: $brand-logo-height;
+          @include transition(all 500ms ease-in-out);
+
+          @media (max-width: 767px) {
+            width: $brand-logo-width_s;
+            height: $brand-logo-height_s;
+          }
+
+          svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: $color-white;
+          }
+        }
+
+        a,
+        button {
+          @include base-link($padding: 0, $border-bottom: none);
+          @include scale(1);
+          display: block;
+          font-family: 'HelveticaNeue-Light';
+          @include transition(all 500ms ease-in-out);
+        }
+      }
+    }
+
+    &.landing__header__navbar_smaller {
+      .landing__header__navbar__list__item {
+        #retargetapp-logo {
+          width: $brand-logo-width_s;
+          height: $brand-logo-height_s;
+          -webkit-transform:translateZ(0); //Smooth CSS transitions by forcing GPU rendering
+          @include transition(all 500ms ease-in-out);
+        }
+
+        &:not(:first-of-type) {
+          a,
+          button {
+            @include scale(0.94);
+            @include transition(all 500ms ease-in-out);
+          }
+        }
+      }
+    }
+  }
+}

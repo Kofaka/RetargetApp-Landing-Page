@@ -1,0 +1,49 @@
+// Colors
+$white        : #fff;
+$light-grey   : #ebeef0;
+$lighter-grey : #9ba1a9;
+$mid-grey     : #4e5665;
+$dark-grey    : #31373d;
+$teal         : #017a95;
+$red          : #b84039;
+$green        : #64bc63;
+
+$color-white       : $white;
+$color-background  : $light-grey;
+$color-font-title  : $mid-grey;
+$color-font-light  : $lighter-grey;
+$color-font-base   : $dark-grey;
+$color-icon-light  : $lighter-grey;
+$color-icon-mid    : $mid-grey;
+$color-icon        : $dark-grey;
+$color-base        : $teal;
+$color-base-darken : darken($color-base, 4);
+$color-base-dark   : darken($color-base, 7);
+$color-error       : $red;
+$color-success     : $green;
+
+$layout-max-width           : 960px;
+$header-height              : 90px;
+$footer-height              : 275px;
+$brand-logo-width           : 168px;
+$brand-logo-height          : 29px;
+$brand-logo-width_s         : round($brand-logo-width * 0.8);
+$brand-logo-height_s        : round($brand-logo-height * 0.8);
+$base-padding_large         : 57px;
+$base-padding_medium        : round( ($base-padding_large * 0.75) );
+$base-padding               : round( ($base-padding_large * 0.5) );
+$base-padding_2x-large      : ($base-padding_large * 2);
+
+
+//Typografy
+$font-family-base: 'HelveticaNeue-Thin', sans-serif;
+$font-family-bold: 'HelveticaNeue', sans-serif;
+
+// $font-size-xxxx-large : 96px;
+// $font-size-xxx-large  : 64px;
+// $font-size-xx-large   : 48px;
+$font-size-x-large    : 36px;
+$font-size-large      : 24px;
+$font-size-regular    : 16px;
+$font-size-medium     : 15px;
+$font-size-small      : 13px;

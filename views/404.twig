@@ -1,0 +1,19 @@
+{% set bodyclassname = 'error-page' %}
+{% extends 'base.twig' %}
+
+{% block body %}
+  {% include 'partials/svg-icons.twig' %}
+  {% include 'partials/header.twig' %}
+
+  <main class="base__wrapper">
+    {% include 'partials/heroshot.twig' %}
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  {{ parent() }}
+
+  <script>
+    ga('send', 'pageview', '/404');
+  </script>
+{% endblock %}

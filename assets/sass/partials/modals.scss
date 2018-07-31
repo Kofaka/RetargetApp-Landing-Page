@@ -1,0 +1,142 @@
+#close-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: $color-background;
+}
+
+.landing__modal {
+  .modal-dialog {
+    @media (min-width: 768px) {//to override bootstrap styles
+      width: 60%;
+    }
+
+    @media (min-width: 768px) and (max-width: 980px) {
+      width: 95%;
+    }
+
+    @media (min-width: 981px) and (max-width: 1023px) {
+      width: 90%;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1164px) {
+      width: 80%;
+    }
+
+    @media (min-width: 1165px) and (max-width: 1600px) {
+      width: 70%;
+    }
+
+    @media (min-width: 1601) {
+      width: 60%;
+    }
+  }
+
+  &.modal {
+
+    .modal-content {
+      background-color: black;
+    }
+
+    .modal-body {
+      padding: $base-padding;
+
+      @media (max-width: 568px)  {
+        padding: 20px;
+      }
+
+      @media (min-width: 569px) and (max-width: 667px)  {
+        padding: 25px;
+      }
+
+      @media (min-width: 668px) and (max-width: 767px)  {
+        padding: 29px;
+      }
+    }
+
+    .close {
+      margin: (-$base-padding) (-$base-padding) (-$base-padding_large) $base-padding_large;
+      width: ($base-padding + 10px);
+      height: ($base-padding + 10px);
+      opacity: 0.5;
+
+      @media (max-width: 480px) {
+        margin: -19px -13px 0 0;
+        width: 11px;
+        height: 11px;
+      }
+
+      @media (min-width: 481px) and (max-width: 568px)  {
+        margin: -19px -16px 0 0;
+        width: 13px;
+        height: 13px;
+      }
+
+      @media (min-width: 569px) and (max-width: 667px)  {
+        margin: -21px -18px 0 0;
+        width: 15px;
+        height: 15px;
+      }
+
+      @media (min-width: 668px) and (max-width: 767px)  {
+        margin: -23px -21px 0 0;
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        opacity: 1;
+
+        #close-icon svg {
+          transform: rotate(-180deg);
+          @include transition(transform 0.3s ease);
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      #close-icon svg {
+        @include transition(transform 0.3s ease);
+
+        @media (max-width: 480px) {
+          width: 11px;
+          height: 11px;
+        }
+
+        @media (min-width: 481px) and (max-width: 568px)  {
+          width: 13px;
+          height: 13px;
+        }
+
+        @media (min-width: 569px) and (max-width: 667px)  {
+          width: 15px;
+          height: 15px;
+        }
+
+        @media (min-width: 668px) and (max-width: 767px)  {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    iframe {
+      @media (max-width: 480px) {
+        height: 240px;
+      }
+
+      @media (min-width: 481px) and (max-width: 568px)  {
+        height: 250px;
+      }
+
+      @media (min-width: 569px) and (max-width: 667px)  {
+        height: 300px;
+      }
+
+      @media (min-width: 668px) and (max-width: 767px)  {
+        height: 330px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+body,
+html {
+  @include text-base;
+  width: 100%;
+  height: 100%;
+  background-color: $color-background;
+}
+
+b {
+  font-family: $font-family-bold;
+}
+
+#intercom-container .intercom-launcher-button,
+#intercom-container .intercom-launcher-preview {
+  box-shadow: none !important; // to override Intercom's styles
+  border-color: transparent !important; // to override Intercom's styles
+}

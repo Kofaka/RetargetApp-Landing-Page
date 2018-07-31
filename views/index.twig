@@ -1,0 +1,75 @@
+{% set bodyclassname = 'landing-page' %}
+{% extends 'base.twig' %}
+
+{% block body %}
+  {# Facebook Social Plugins #}
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  {% include 'partials/svg-icons.twig' %}
+  {% include 'partials/modals.twig' %}
+
+  {% include 'partials/header.twig' %}
+
+  <main class="base__wrapper">
+    {% include 'partials/heroshot.twig' %}
+    {% include 'partials/base-content.twig' %}
+  </main>
+
+  {% include 'partials/footer.twig' %}
+
+  <section class="partner-badge_footer-wrapper">
+    {{ include('partials/fb-partner.twig', {placement: 'footer', isSmall: true}) }}
+  </section>
+
+{% endblock %}
+
+{% block scripts %}
+  {# Intercom Acquire Live Chat #}
+  <script>
+    window.intercomSettings = {
+      app_id: "{{ app['INTERCOM_ID'] }}"
+    };
+  </script>
+  <script>
+    (function(){
+      var w=window;
+      var ic=w.Intercom;
+      if(typeof ic==="function"){ic('reattach_activator');
+        ic('update',intercomSettings);
+      }else{var d=document;
+        var i=function(){i.c(arguments)};
+        i.q=[];
+        i.c=function(args){i.q.push(args)};
+        w.Intercom=i;
+        function l(){var s=d.createElement('script');
+          s.type='text/javascript';
+          s.async=true;
+          s.src='https://widget.intercom.io/widget/{{ app['INTERCOM_ID'] }}';
+          var x=d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s,x);
+        }
+        if(w.attachEvent){
+          w.attachEvent('onload',l);
+        }else{
+          w.addEventListener('load',l,false);
+        }
+      }
+
+      $('.js-landing__link_intercom').click(function(event){
+        event.preventDefault();
+        Intercom('showNewMessage', '');
+      });
+    })()
+  </script>
+
+  {{ parent() }}
+{% endblock %}

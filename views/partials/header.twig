@@ -1,0 +1,48 @@
+<header class="landing__header">
+  <div class="landing__header__background-wrapper">
+    <div class="landing__header__background-image"></div>
+  </div>
+
+  <nav class="landing__header__navbar">
+    <ul class="landing__header__navbar__list">
+      <li class="landing__header__navbar__list__item">
+        <a href="/" title="RetargetApp">
+          <i id="retargetapp-logo">
+            <svg viewBox="0 0 167.5 27.7">
+              <use xlink:href="#retargetapp-logo"></use>
+            </svg>
+          </i>
+        </a>
+      </li>
+
+      {% if bodyclassname == 'landing-page' %}
+        <li class="landing__header__navbar__list__item
+                   js-landing__header__navbar__list__item_watch-video">
+          <button class="landing__header__navbar__link"
+                  data-toggle="modal"
+                  data-target="#watchVideoModal"
+                  data-theVideo="https://www.youtube.com/embed/5OHgQlmiDg0"
+                  type="button">
+            Watch Video
+          </button>
+        </li>
+
+        <li class="landing__header__navbar__list__item
+                   js-landing__header__navbar__list__item_run-campaign">
+          <a href="http://apps.shopify.com/retargetapp-facebook-retargeting?utm_source=Landing%20page&utm_medium=Header%20-%20Run%20Retargeting%20Campaign&utm_campaign=RetargetApp%20landing%20page"
+             title="Run Retargeting Campaign">
+            Run Retargeting Campaign
+          </a>
+        </li>
+
+        <li class="landing__header__navbar__list__item
+                   js-landing__header__navbar__list__item_login-shopify">
+          <a href="http://apps.shopify.com/retargetapp-facebook-retargeting?utm_source=Landing%20page&utm_medium=Header%20-%20Login%20via%20Shopify&utm_campaign=RetargetApp%20landing%20page"
+             title="Login via Shopify">
+            Login via Shopify
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,84 @@
+.partner-badge_header-wrapper {
+  position: absolute;
+  z-index: 399;
+  width: 100%;
+  bottom: 0;
+}
+
+.partner-badge_footer-wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 399;
+}
+
+.partner-badge_container {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.partner-badge_container-small {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.partner-badge_link {
+  display: inline-block;
+  margin: auto;
+}
+
+.partner-badge_image {
+  background-image: url(/images/partner-badge-30.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 193px;
+  height: 30px;
+  min-width: 100%;
+}
+
+.partner-badge_image-small {
+  background-image: url(/images/partner-badge-20.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 129px;
+  height: 20px;
+  min-width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .partner-badge_header-wrapper {
+
+  }
+
+  .partner-badge_container {
+    font-size: 16px;
+  }
+
+  .partner-badge_container {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  .partner-badge_container-small {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
+  .partner-badge_image {
+    background-image: url(/images/partner-badge-40.svg);
+    width: 232px;
+    height: 36px;
+  }
+  .partner-badge_image-small {
+    width: 193px;
+    height: 30px;
+    background-image: url(/images/partner-badge-30.svg);
+  }
+
+}

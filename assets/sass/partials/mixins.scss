@@ -1,0 +1,172 @@
+//Mixins
+@mixin text-base($font-size: $font-size-small, $color: $color-font-base) {
+  font: {
+    family: $font-family-base;
+    size: $font-size;
+  }
+  color: $color;
+  letter-spacing: 0.03em;
+}
+
+@mixin base-button($padding: 12px 40px,
+                   $display: block,
+                   $color: $color-white,
+                   $color-hover: $color,
+                   $color-active: $color,
+                   $background-color: transparent,
+                   $background-color-hover: transparentize($color-hover, 0.95),
+                   $background-color-active: transparentize($color-active, 0.98),
+                   $border-width: 1px,
+                   $border-color: $color,
+                   $border-color-hover: $color,
+                   $border-color-active: $color,
+                   $border-radius: 3px,
+                   $font-size: $font-size-regular,
+                   $line-height: $font-size) {
+  padding: $padding;
+  display: $display;
+  background-color: $background-color;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: none;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  text-align: center;
+  user-select: none;
+
+  &:focus:not(.disabled),
+  &:hover:not(.disabled) {
+    background-color: $background-color-hover;
+    border-color: $border-color-hover;
+    color: $color-hover;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:active:not(.disabled) {
+    background-color: $background-color-active;
+    border-color: $border-color-active;
+    color: $color-active;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
+    pointer-events: none;
+  }
+}
+
+@mixin base-button_invert($display: block) {
+  @include base-button($display: $display,
+                       $color: $color-base,
+                       $color-hover: $color-base-dark,
+                       $color-active: $color-base-darken,
+                       $background-color: transparent,
+                       $border-color-hover: $color-base-dark,
+                       $border-color-active: $color-base-darken);
+}
+
+@mixin base-button-filled($padding: 12px 40px,
+                          $display: block) {
+  @include base-button($padding: $padding,
+                       $display: $display,
+                       $color: $color-base,
+                       $color-hover: darken($color-base, 2),
+                       $color-active: $color-base,
+                       $background-color: $color-white,
+                       $background-color-hover: darken($color-background, 7),
+                       $background-color-active: $color-background,
+                       $border-color: $color-white,
+                       $border-color-hover: darken($color-background, 7),
+                       $border-color-active: $color-background);
+}
+
+@mixin base-button-filled_invert($display: block) {
+  @include base-button($display: $display,
+                       $background-color: $color-base,
+                       $background-color-hover: $color-base-dark,
+                       $background-color-active: $color-base-darken,
+                       $border-color: $color-base,
+                       $border-color-hover: $color-base-dark,
+                       $border-color-active: $color-base-darken);
+}
+
+@mixin base-link($padding: 0 0 5px 0,
+                 $color: $color-white,
+                 $color-hover: darken($color-background, 10),
+                 $color-active: $color-background,
+                 $border-bottom: 1px solid $color,
+                 $border-color-hover: $color-hover,
+                 $border-color-active: $color-active,
+                 $font-size: $font-size-regular,
+                 $decoration: none) {
+  padding: $padding;
+  background-color: transparent;
+  border: none;
+  border-bottom: $border-bottom;
+  font-size :$font-size;
+  color: $color;
+  text-decoration: $decoration;
+
+  &:focus,
+  &:hover {
+    border-color: $border-color-hover;
+    color: $color-hover;
+    text-decoration: $decoration;
+  }
+
+  &:active {
+    border-color: $border-color-active;
+    color: $color-active;
+  }
+}
+
+@mixin base-link_invert($font-size: $font-size-regular) {
+  @include base-link($color: $color-base,
+                     $color-hover: $color-base-dark,
+                     $color-active: $color-base-darken,
+                     $border-bottom: none,
+                     $font-size: $font-size,
+                     $decoration: underline);
+}
+
+//Layout widgets
+@mixin base-min-layout {
+  margin: 0 auto;
+  padding: 0 $base-padding_large;
+  max-width: $layout-max-width;
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    padding: 0 $base-padding_medium;
+  }
+
+  @media (max-width: 479px) {
+    padding: 0 $base-padding;
+  }
+}
+
+@mixin section-min-layout {
+  margin: 0 auto;
+  padding: 0 $base-padding_2x-large;
+  max-width: $layout-max-width;
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    padding: 0 $base-padding_medium*2;
+  }
+
+  @media (max-width: 479px) {
+    padding: 0 $base-padding*2;
+  }
+}
+
+@mixin background-image-layout {
+  margin: -2vh -2vw -2vh -2vw;
+  width: 104vw;
+  height: 104vh;
+  background: $color-base url(../images/backgroun-image.jpg) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}

@@ -1,0 +1,176 @@
+.landing__footer_wrapper{
+  background: $light-grey;
+  position: relative;
+  z-index: 401;
+}
+
+.landing__footer {
+  @include base-min-layout;
+
+  @include flexbox;
+  @include flex-flow;
+  @include justify-content(flex-end);
+  @include align-items(center);
+
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 0px;
+  height: $footer-height;
+  z-index: 300;
+
+  @media (min-width: 1280px) {
+    //@include scale(1.25);
+    //margin-top: 26%;
+    //max-width: 80vw;
+  }
+
+  /*@media (min-width: 1300px) {
+    //margin-top: 25%;
+  }
+
+  @media (min-width: 1330px) {
+    //margin-top: 24%;
+  }
+
+  @media (min-width: 1400px) {
+    //margin-top: 23%;
+  }
+
+  @media (min-width: 1460px) {
+    //margin-top: 22%;
+  }
+
+  @media (min-width: 1530px) {
+    //margin-top: 21%;
+  }
+
+  @media (min-width: 1610px) {
+    //margin-top: 20%;
+  }
+
+  @media (min-width: 1700px) {
+    //margin-top: 19%;
+  }
+
+  @media (min-width: 1780px) {
+    //margin-top: 18%;
+  }
+
+  @media (min-width: 1890px) {
+    //margin-top: 17%;
+  }
+
+  @media (min-width: 2000px) {
+    margin-top: 16%;
+  }
+
+  @media (min-width: 2240px) {
+    margin-top: 14%;
+  }
+
+  @media (min-width: 2400px) {
+    margin-top: 13%;
+  }
+
+  @media (min-width: 2580px) {
+    margin-top: 12%;
+  }
+
+  @media (min-width: 2790px) {
+    margin-top: 11%;
+  }
+
+  @media (min-width: 3060px) {
+    margin-top: 10%;
+  }
+
+  @media (min-width: 3360px) {
+    margin-top: 9%;
+  }
+
+  @media (min-width: 3750px) {
+    margin-top: 8%;
+  }*/
+
+  &__list {
+    margin: 0 0 0 auto;
+    padding: 0;
+    padding-left: ($base-padding_large - 10);
+    width: 50%;
+    list-style: none;
+
+    @media (max-width: 360px) {
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+    }
+
+    @media (min-width: 361px)
+           and (max-width: 480px)
+           and (orientation: portrait) {
+      margin: 0 auto;
+      padding: 0;
+      width: 90%;
+    }
+
+    @media only screen
+           and (min-device-width: 320px)
+           and (max-device-width: 640px)
+           and (orientation: landscape) {
+      margin: 0 auto;
+      padding: 0;
+      width: 75%;
+    }
+
+    @media (min-width: 641px)
+           and (max-width: 773px)
+           and (orientation: landscape) {
+      margin: 0 auto;
+      padding: 0;
+      width: 55%;
+    }
+
+    // iPad mini, 1 and 2 Portrait
+    @media only screen
+           and (min-device-width: 768px)
+           and (max-device-width: 1024px)
+           and (orientation: portrait)
+           and (-webkit-min-device-pixel-ratio: 1) {
+      padding: $base-padding $base-padding 0 0;
+    }
+
+    // iPad 3 and 4 Portrait
+    @media only screen
+           and (min-device-width: 768px)
+           and (max-device-width: 1024px)
+           and (orientation: portrait)
+           and (-webkit-min-device-pixel-ratio: 2) {
+      padding: $base-padding $base-padding 0 0;
+    }
+
+    &__item-group {
+      &:first-of-type {
+        margin-bottom: $font-size-large;
+      }
+
+      &:last-of-type {
+        line-height: 2em;
+      }
+    }
+
+    &__item {
+      display: inline-block;
+      height: 20px;
+      vertical-align: middle;
+      overflow: hidden;
+
+      &:not(:last-of-type) {
+        margin-right: $font-size-regular;
+      }
+
+      a {
+        @include base-link_invert($font-size-small)
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /pixel.js
+Disallow: /.well-known
+Disallow: /apple-app-site-association
+Disallow: //verify_trustscam_com

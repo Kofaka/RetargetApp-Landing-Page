@@ -1,0 +1,312 @@
+.landing__heroshot {
+  color: $color-white;
+  position: relative;
+  @media (min-width: 1280px) {
+    max-width: 100vw;
+  }
+
+  &__background-wrapper {
+    position: fixed;
+    overflow: hidden;
+    z-index: 100;
+
+    @media (min-width: 1280px) {
+      max-width: 100vw;
+    }
+  }
+
+  &__background-image {
+    @include background-image-layout;
+  }
+
+  &__wrapper {
+    @include base-min-layout;
+    @include flexbox;
+    @include flex-flow(row wrap);
+    @include justify-content(space-around);
+    @include align-items(center);
+
+    position: relative;
+    height: 100vh;
+    z-index: 100;
+
+    @media (min-width: 1280px) {
+      max-width: 1080px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+    }
+  }
+
+  &__subsection {
+    padding: 0 ($base-padding_large + 5);
+
+    @media (min-width: 1280px) {
+      @include scale(1.25);
+    }
+
+    &:nth-child(1) {
+      margin-top: -($header-height / 2);
+      width: 57%;
+
+      @media (max-width: 479px) {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 25%;
+        margin: 0;
+        padding: 0 $base-padding;
+        width: 100%;
+      }
+
+      @media only screen
+             and (min-device-width: 320px)
+             and (max-device-width: 640px)
+             and (orientation: landscape) {
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      @media (min-width: 641px)
+             and (max-width: 773px)
+             and (orientation: landscape) {
+        margin-top: 0;
+        padding: 0;
+        width: 60%;
+      }
+
+      // iPad mini, 1 and 2 Portrait
+      @media only screen
+             and (min-device-width: 768px)
+             and (max-device-width: 1024px)
+             and (orientation: portrait)
+             and (-webkit-min-device-pixel-ratio: 1) {
+        padding: 0 $base-padding;
+        width: 65%;
+      }
+
+      // iPad 3 and 4 Portrait
+      @media only screen
+             and (min-device-width: 768px)
+             and (max-device-width: 1024px)
+             and (orientation: portrait)
+             and (-webkit-min-device-pixel-ratio: 2) {
+        padding: 0 $base-padding;
+        width: 65%;
+      }
+
+      .landing__heroshot__description {
+        max-width: 360px;
+
+        @media only screen
+               and (min-device-width: 320px)
+               and (max-device-width: 640px)
+               and (orientation: landscape) {
+          margin-bottom: $font-size-large;
+        }
+      }
+
+      .landing__heroshot__button {
+        max-width: 250px;
+        margin-left: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: -($header-height);
+      width: 43%;
+
+      @media only screen
+             and (min-device-width: 320px)
+             and (max-device-width: 640px)
+             and (orientation: landscape) {
+        display: none;
+      }
+
+
+      @media (min-width: 641px)
+             and (max-width: 773px)
+             and (orientation: landscape) {
+        margin-top: 0;
+        padding: 0;
+        width: 40%;
+      }
+
+      // iPad mini, 1 and 2 Portrait
+      @media only screen
+             and (min-device-width: 768px)
+             and (max-device-width: 1024px)
+             and (orientation: portrait)
+             and (-webkit-min-device-pixel-ratio: 1) {
+        padding: 0 $base-padding 0 0;
+        width: 35%;
+      }
+
+      // iPad 3 and 4 Portrait
+      @media only screen
+             and (min-device-width: 768px)
+             and (max-device-width: 1024px)
+             and (orientation: portrait)
+             and (-webkit-min-device-pixel-ratio: 2) {
+        padding: 0 $base-padding 0 0;
+        width: 35%;
+      }
+    }
+
+    &_scroll-for-more {
+      position: absolute;
+      bottom: ($base-padding_large + $base-padding_large);
+      left: 0;
+      padding: 0 ($base-padding_large + 5 + $base-padding_large);
+      width: 100%;
+
+      @media (min-width: 1280px) {
+        @include scale(1.25);
+        width: 63%;
+      }
+
+      @media (min-width: 768px) and (max-width: 804px) {
+        bottom: ($base-padding_large + $base-padding_medium);
+        padding: 0 ($base-padding_large + $base-padding_medium);
+      }
+
+      @media (max-width: 767px) {
+        bottom: $base-padding_large + 30px;
+        padding: 0 $base-padding_large;
+      }
+
+      @media (max-width: 480px) {
+        bottom: $base-padding + 60px;
+        padding: 0 $base-padding;
+      }
+
+      // Nexus Landscape
+      @media only screen
+             and (min-device-width: 411px)
+             and (max-device-width: 773px)
+             and (orientation: landscape) {
+        bottom: $base-padding_medium;
+        padding: 0 $base-padding_large;
+      }
+
+      // iPhone 6 and 6+ Landscape
+      @media only screen
+             and (min-device-width: 375px)
+             and (max-device-width: 736px)
+             and (orientation: landscape) {
+        bottom: $base-padding_medium;
+        padding: 0 $base-padding_medium;
+      }
+
+      // Galaxy S5 and iPhone 5 Landscape
+      @media only screen
+             and (min-device-width: 320px)
+             and (max-device-width: 640px)
+             and (-webkit-min-device-pixel-ratio: 2)
+             and (orientation: landscape) {
+        bottom: round($base-padding_medium/2);
+        padding: 0 $base-padding_medium;
+      }
+
+      a {
+        @include base-link($font-size: $font-size-small,
+                           $border-bottom: none,
+                           $border-color-hover: transparent,
+                           $border-color-active: transparent);
+        font-family: 'HelveticaNeue-Light';
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 ($base-padding - 3);
+    color: $color-white;
+    font-family: 'HelveticaNeue-Light';
+    font-size: $font-size-large;
+    font-weight: 200;
+    line-height: 1.3em;
+
+    @media only screen
+           and (min-device-width: 320px)
+           and (max-device-width: 640px)
+           and (orientation: landscape) {
+      margin: $font-size-small 0;
+    }
+  }
+
+  &__description {
+    margin: 0 0 $base-padding;
+    font-family: 'HelveticaNeue-Light';
+    font-size: $font-size-medium;
+    line-height: 1.4em;
+  }
+
+  &__button {
+    @include base-button-filled($padding: 12px 16px);
+    margin: 0 auto;
+  }
+
+  & &__button_play {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-family: 'HelveticaNeue-Light';
+
+    @media (max-width: 479px) {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+
+      .landing__link {
+        color: darken($color-background, 10);
+        border-color: darken($color-background, 10);
+      }
+
+      .play-icon#play-icon svg {
+        fill: darken($color-background, 10);
+      }
+    }
+
+    &:active {
+      .landing__heroshot__link {
+        color: $color-background;
+        border-color: $color-background;
+      }
+
+      .play-icon#play-icon svg {
+        fill: $color-background;
+      }
+    }
+
+    .play-icon {
+      display: inline-block;
+      margin: 5px 15px 0 0;
+      vertical-align: middle;
+    }
+  }
+
+  &__link {
+    @include base-link;
+    letter-spacing: 0.04em;
+
+    @media (min-width: 992px) {
+      font-size: 1.5em;
+    }
+  }
+
+  .play-icon {
+    display: block;
+
+    &#play-icon svg {
+      fill: $color-white;
+    }
+  }
+}
