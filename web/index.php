@@ -12,10 +12,10 @@ $intercom_id = [
 ];
 
 $app = new Silex\Application();
-$app['debug'] = ($_SERVER['ENV'] != 'prod');
-$app['host'] = ($_SERVER['HOST'] === false) ? 'retargetapp.com' : $_SERVER['HOST'];
+$app['debug'] = (getenv('ENV') != 'prod');
+$app['host'] = (getenv('HOST') === false) ? 'retargetapp.com' : getenv('HOST');
 
-$app['INTERCOM_ID'] = ($_SERVER['ENV'] == 'prod' ? $intercom_id['prod'] : $intercom_id['dev']);
+$app['INTERCOM_ID'] = (getenv('ENV') == 'prod' ? $intercom_id['prod'] : $intercom_id['dev']);
 
 // Register the monolog logging service
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
